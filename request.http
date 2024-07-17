@@ -1,0 +1,34 @@
+###
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "id": 12,
+  "firstName": "Nites",
+  "lastName": "Doe",
+  "email": "nites@exzm.com",
+  "isActive": true,
+  "password": "nd123"
+}
+
+###find user by id
+GET http://localhost:3000/auth/12
+
+###Find user by email
+GET http://localhost:3000/auth/?email=nites@exzm.com
+
+
+###delete User
+DELETE http://localhost:3000/auth/1245
+
+###Upadte User
+PATCH http://localhost:3000/auth/2777
+Content-Type: application/json
+
+{
+  "firstName": "Nites",
+  "lastName": "Awasti",
+  "email": "nites@exzm.com",
+  "isActive": false,
+  "password": "nd123"
+}

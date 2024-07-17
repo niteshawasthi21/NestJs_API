@@ -1,0 +1,98 @@
+# Logs
+logs/
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnplog.*
+*.pid
+*.seed
+*.sleep
+
+# Runtime data
+pids/
+*.pid
+
+# IDEs and editors
+*.code-workspace
+*.code-snippets
+*.sln
+*.suo
+*.user
+*.vnext
+*.vnext.json
+*.v6
+*.vnext/tscconfig.json
+*.jsproj
+*.csproj
+*.sql
+*.mdd
+*.lock.json
+*.fsproj
+
+# IDEs and editors (cont.)
+*.sublime-project
+*.sublime-workspace
+*.sublime-settings
+*.vscode
+*.vscode-settings
+*.vscode-task
+*.vscode-launch.json
+*.vscode-settings.json
+*.vscode-extensions.json
+
+# Output directory
+dist/
+
+# Databases
+db.sqlite3
+db.sqlite3-journal
+
+# Package manager data
+package-lock.json
+yarn.lock
+
+# Grunt
+Gruntfile.js
+Gruntfile.coffee
+
+# Gulp
+gulpfile.js
+gulpfile.coffee
+
+# Webpack
+webpack.config.js
+webpack.config.js.map
+
+# Bower
+bower.json
+bower_components/
+
+# Artifacts
+artifacts/
+artifacts/.idea
+artifacts/.gitignore
+artifacts/.gitignore~
+artifacts/.gitignore~
+
+# Docker
+docker-compose.yml
+docker-compose.json
+docker-compose.override.yml
+docker-compose.dev.yml
+docker-compose.prod.yml
+docker-compose.staging.yml
+docker-compose.test.yml
+docker-compose.ci.yml
+docker-compose.build.yml
+docker-compose.buildx.yml
+docker-compose.buildx.json
+docker-compose.buildx.override.yml
+docker-compose.buildx.dev.yml
+docker-compose.buildx.prod.yml
+docker-compose.buildx.staging.yml
+docker-compose.buildx.test.yml
+docker-compose.buildx.ci.yml
+
+# NestJS
