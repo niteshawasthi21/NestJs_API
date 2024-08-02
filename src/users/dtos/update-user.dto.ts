@@ -8,7 +8,7 @@ export class UpdateUser{
   
     @IsString()
     @IsOptional()
-    lastName: string;
+    confirmPassword: string;
   
     @IsEmail()
     @IsOptional()

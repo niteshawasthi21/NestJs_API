@@ -3,32 +3,32 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "id": 12,
-  "firstName": "Nites",
-  "lastName": "Doe",
-  "email": "nites@exzm.com",
-  "isActive": true,
-  "password": "nd123"
+  "fullName": "John",
+  "confirmPassword": "pasd",
+  "email": "tonyawasthi85@gmail.com",
+  "password": "pasd"
 }
 
 ###find user by id
-GET http://localhost:3000/auth/12
+GET http://localhost:3000/auth/1
 
 ###Find user by email
-GET http://localhost:3000/auth/?email=nites@exzm.com
+GET http://localhost:3000/auth/?email=tonyawasthi85@gmail.com
 
 
 ###delete User
-DELETE http://localhost:3000/auth/1245
+DELETE http://localhost:3000/auth/12345
 
 ###Upadte User
 PATCH http://localhost:3000/auth/2777
 Content-Type: application/json
 
+
+###login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
 {
-  "firstName": "Nites",
-  "lastName": "Awasti",
-  "email": "nites@exzm.com",
-  "isActive": false,
-  "password": "nd123"
+  "email": "tonyawasthi85@gmail.com",
+  "password": "pasd"
 }
+ 

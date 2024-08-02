@@ -7,22 +7,19 @@ import {
 } from 'class-validator';
 
 export class CreateUserDto {
-  @IsNumber()
-  id: number;
 
   @IsString()
   @IsNotEmpty()
-  firstName: string;
+  fullName: string;
 
   @IsString()
   @IsNotEmpty()
-  lastName: string;
+  confirmPassword: string;
 
   @IsEmail()
   email: string;
 
-  @IsBoolean()
-  isActive: boolean;
+  
 
   @IsString()
   @IsNotEmpty()

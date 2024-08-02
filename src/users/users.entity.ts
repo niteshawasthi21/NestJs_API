@@ -1,38 +1,50 @@
-// import { Exclude } from 'class-transformer';
-import {AfterInsert,AfterRemove,AfterUpdate, Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { 
+  AfterInsert, 
+  AfterRemove, 
+  AfterUpdate, 
+  Entity, 
+  Column, 
+  PrimaryGeneratedColumn 
+} from 'typeorm';
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number; // Auto-incremented unique identifier for the user
 
   @Column()
-  firstName?: string;
+  fullName: string; // User's first name
 
-  @Column()
-  lastName?: string;
-
-  @Column()
-  email?: string;
+  @Column({ unique: true })
+  email: string; // User's email address, must be unique
 
   @Column({ default: true })
-  isActive?: boolean;
+  isActive: boolean; // User's active status, default is true
 
-  // @Exclude() //excluding password property to getting in response!||not required as going to implement interceptor
   @Column()
-  password?: string;
+  password: string; // User's password (hashed)
 
+  /**
+   * Logs a message when a new user is inserted into the database.
+   */
   @AfterInsert()
-  logInsert(){
-    console.log("Inserted User",this.id)
-  }
-  @AfterUpdate()
-  logUpdate(){
-    console.log("Updated User",this.id)
+  logInsert() {
+    console.log('Inserted User', this.id);
   }
 
+  /**
+   * Logs a message when a user is updated in the database.
+   */
+  @AfterUpdate()
+  logUpdate() {
+    console.log('Updated User', this.id);
+  }
+
+  /**
+   * Logs a message when a user is removed from the database.
+   */
   @AfterRemove()
-  logRemove(){
-    console.log("Removed User",this.id)
+  logRemove() {
+    console.log('Removed User', this.id);
   }
 }

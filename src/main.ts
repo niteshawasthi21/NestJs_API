@@ -12,6 +12,12 @@ async function bootstrap() {
     }),
   );
 
+  // Enable CORS
+  app.enableCors({
+    origin: 'http://localhost:4200', // Replace with your Angular app's URL
+    credentials: true,
+  });
+
   await app.listen(3000);
 }
 bootstrap();
