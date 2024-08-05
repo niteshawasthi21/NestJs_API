@@ -14,7 +14,7 @@ async function bootstrap() {
 
   // Enable CORS
   app.enableCors({
-    origin: 'http://localhost:4200', // Replace with your Angular app's URL
+    origin: '*', //from any url request will accept
     credentials: true,
   });
 

@@ -32,3 +32,13 @@ Content-Type: application/json
   "password": "pasd"
 }
  
+
+###task creation
+POST http://localhost:3000/tasks/taskcreation
+Content-Type: application/json
+
+{
+  "title": "Develop User Authentication",
+  "description": "Implement login and registration functionalities with JWT authentication.",
+  "status": "nmnm"
+}
