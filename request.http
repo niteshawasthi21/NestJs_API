@@ -27,6 +27,7 @@ Content-Type: application/json
 ###login
 POST http://localhost:3000/auth/login
 Content-Type: application/json
+
 {
   "email": "tonyawasthi85@gmail.com",
   "password": "pasd"
@@ -41,4 +42,15 @@ Content-Type: application/json
   "title": "Develop User Authentication",
   "description": "Implement login and registration functionalities with JWT authentication.",
   "status": "nmnm"
+}
+
+
+
+###Comment creation
+POST http://localhost:3000/comments/create
+Content-Type: application/json
+
+{
+   
+  "comment": "This is a test comment"
 }
