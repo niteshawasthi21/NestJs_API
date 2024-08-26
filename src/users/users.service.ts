@@ -18,26 +18,11 @@ export class UsersService {
    * @throws ConflictException if passwords do not match or email is already in use.
    */
   async create( fullName: string, confirmPassword: string, email: string, password: string) {
-    // Check if passwords match
-    if (password !== confirmPassword) {
-      throw new ConflictException('Passwords do not match');
-    }
-
-    // Check if email is already in use
-    const existingUser = await this.repo.findOne({ where: { email } });
-    if (existingUser) {
-      throw new ConflictException('Email already in use');
-    }
-
-    // Hash the password before storing it
-    const hashedPassword = await bcrypt.hash(password, 10);
-
     const user = this.repo.create({
       fullName,
       email,
-      password: hashedPassword, // Store hashed password
+      password 
     });
-
     return this.repo.save(user);
   }
 
@@ -48,24 +33,7 @@ export class UsersService {
    */
   async findByEmail(email: string) {
     return this.repo.findOne({ where: { email } });
-  }
-
-  /**
-   * Authenticate a user by email and password.
-   * @param email - The user's email address.
-   * @param password - The user's password.
-   * @returns A success message with the user ID if credentials are valid.
-   * @throws UnauthorizedException if the credentials are invalid.
-   */
-  async login(email: string, password: string) {
-    const user = await this.findByEmail(email);    
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!user || !isPasswordValid) {
-      throw new ConflictException('Invalid credentials');
-    }
-
-    return { message: 'Login successful', userId: user.id };
-  }
+  } 
 
   /**
    * Find a user by their ID.

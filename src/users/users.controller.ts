@@ -15,11 +15,14 @@ import { UsersService } from './users.service';
 import { UpdateUser } from './dtos/update-user.dto';
 import { Serialize} from 'src/interceptors/serialize.interceptor';
 import { UserDto } from './dtos/user.dto';
+import { AuthService } from './auth.service';
 
 @Controller('auth')
 @Serialize(UserDto) //controller wise intercepter
 export class UsersController {
-  constructor(private userService: UsersService) {}
+  constructor(private userService: UsersService,
+    private authService: AuthService
+  ) {}
 
   /**
    * Register a new user.
@@ -30,7 +33,7 @@ export class UsersController {
   @Post('/signup')
   async createUser(@Body() body: CreateUserDto) {
     try {
-      return await this.userService.create(
+      return await this.authService.signUP(
         body.fullName,
         body.confirmPassword,
         body.email,
@@ -50,7 +53,7 @@ export class UsersController {
   @Post('/login')
   async login(@Body() body: { email: string; password: string }) {
     try {
-      return await this.userService.login(body.email, body.password);
+      return await this.authService.singIn(body.email, body.password);
     } catch (error) {
       throw new ConflictException(error.message);
     }
