@@ -8,14 +8,16 @@ import {
   Query,
   Delete,
   NotFoundException,
-  ConflictException,
-  UnauthorizedException,
+  ConflictException, 
 } from '@nestjs/common';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UsersService } from './users.service';
 import { UpdateUser } from './dtos/update-user.dto';
+import { Serialize} from 'src/interceptors/serialize.interceptor';
+import { UserDto } from './dtos/user.dto';
 
 @Controller('auth')
+@Serialize(UserDto) //controller wise intercepter
 export class UsersController {
   constructor(private userService: UsersService) {}
 
@@ -60,6 +62,7 @@ export class UsersController {
    * @returns The user entity.
    * @throws NotFoundException if the user is not found.
    */
+  // @Serialize(UserDto)//route wise intercepter
   @Get('/:id')
   async findUser(@Param('id') id: string) {
     const user = await this.userService.findOne(parseInt(id));

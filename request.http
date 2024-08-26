@@ -1,12 +1,12 @@
-###
+###jjkjk
 POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
   "fullName": "John",
-  "confirmPassword": "pasd",
+  "confirmPassword": "Nitesh",
   "email": "tonyawasthi85@gmail.com",
-  "password": "pasd"
+  "password": "Nitesh"
 }
 
 ###find user by id
@@ -30,7 +30,7 @@ Content-Type: application/json
 
 {
   "email": "tonyawasthi85@gmail.com",
-  "password": "pasd"
+  "password": "Nitesh"
 }
  
 
